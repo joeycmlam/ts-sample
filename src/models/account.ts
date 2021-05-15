@@ -1,35 +1,27 @@
-let accountNo: string = "1";
-let accountType: string = "ITRC";
-let accountStatus: string = "Draft";
-let dateCreated: Date = new Date();
+import {accountItem, enumAccountStatus, enumAccountTypes} from "./iAccount";
 
-interface accountItem {
-    accountNo;
-    accountType;
-    accountStatus;
-    dateCreated;
-}
+let myAccount: accountItem;
 
 function getAccount(_accountNo: string) : accountItem {
-    return this;
+    return myAccount;
 }
 
 function newAccount(_account: accountItem): void {
-    this.accountNo = _account.accountNo;
-    this.accountType = _account.accountType;
-    this.accountStatus = _account.accountStatus;
-    this.dateCreated = new Date();
+    myAccount = _account;
+    myAccount.dateCreated = new Date();
 }
 
-function changeStatus(_accountStatus: string): void {
-    this.accountStatus = _accountStatus;
+function changeStatus(_accountStatus: enumAccountStatus): void {
+    myAccount.accountStatus = _accountStatus;
 }
 
 
 newAccount({accountNo: '2',
-    accountType: 'ITRC',
-    accountStatus : 'Pending', dateCreated : new Date() });
+    accountType: enumAccountTypes.TRADE_BASIS,
+    accountStatus : enumAccountStatus.DRAFT});
 
 let aAccount: accountItem = getAccount('1');
 
-console.log(aAccount.accountStatus);
+changeStatus(enumAccountStatus.PENDING);
+
+console.log(aAccount);
