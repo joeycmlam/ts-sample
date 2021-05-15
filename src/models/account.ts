@@ -1,19 +1,35 @@
 let accountNo: string = "1";
 let accountType: string = "ITRC";
 let accountStatus: string = "Draft";
-let createDate: Date = new Date();
+let dateCreated: Date = new Date();
 
-
-function getAccount(_accountNo: string) : {
+interface accountItem {
     accountNo;
     accountType;
     accountStatus;
-    createDate;
-} {
-    return null;
+    dateCreated;
+}
+
+function getAccount(_accountNo: string) : accountItem {
+    return this;
+}
+
+function newAccount(_account: accountItem): void {
+    this.accountNo = _account.accountNo;
+    this.accountType = _account.accountType;
+    this.accountStatus = _account.accountStatus;
+    this.dateCreated = new Date();
+}
+
+function changeStatus(_accountStatus: string): void {
+    this.accountStatus = _accountStatus;
 }
 
 
-let aAccount = getAccount('1');
+newAccount({accountNo: '2',
+    accountType: 'ITRC',
+    accountStatus : 'Pending', dateCreated : new Date() });
 
-console.log(aAccount);
+let aAccount: accountItem = getAccount('1');
+
+console.log(aAccount.accountStatus);
