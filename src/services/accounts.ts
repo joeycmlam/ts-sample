@@ -1,16 +1,26 @@
 import {accountItem} from "../models/IAccount";
 import {enumAccountStatus, enumAccountTypes} from "../models/IAccount";
 
-class accounts {
-    private _itemAccounts: accountItem[];
+export class accounts {
 
-    public addAccount(_account: accountItem): void {
+ private static instance: accounts;
 
+    private lstAccount: Account[];
+
+    private constructor() {
     }
 
-    public getAccount(_accountNo: string): accountItem {
+    public static getInstance(): accounts {
+        if (accounts.instance) {
+            accounts.instance = new accounts();
+        }
+        return accounts.instance;
+    }
+
+
+    public static getAccount(_accountNo: string) : accountItem {
         return null;
     }
 
-    static instance = new accounts();
 }
+

@@ -1,27 +1,39 @@
-import {accountItem, enumAccountStatus, enumAccountTypes} from "./iAccount";
+import {enumAccountStatus, enumAccountTypes} from "./IAccount";
 
-let myAccount: accountItem;
+class Account  {
+    private accountNo: string;
+    private accountType: enumAccountTypes
+    private accountStatus: enumAccountStatus;
+    private dateCreated: Date;
 
-function getAccount(_accountNo: string) : accountItem {
-    return myAccount;
+    getAccount(): Account {
+        return null;
+    }
+
+    constructor (_accountNo: string, _accountType: enumAccountTypes) {
+        this.accountNo = _accountNo;
+        this.accountType = _accountType;
+        this.accountStatus = enumAccountStatus.DRAFT;
+        this.dateCreated = new Date();
+    }
+
+    getStatus(): enumAccountStatus {
+            return this.accountStatus;
+    }
+
+    ackbyOps() {
+        this.accountStatus = enumAccountStatus.PENDING;
+    }
+
+    closeAccount () {
+        this.accountStatus = enumAccountStatus.CLOSE;
+    }
 }
 
-function newAccount(_account: accountItem): void {
-    myAccount = _account;
-    myAccount.dateCreated = new Date();
-}
+let a: Account = new Account('1', enumAccountTypes.TRADE_BASIS);
 
-function changeStatus(_accountStatus: enumAccountStatus): void {
-    myAccount.accountStatus = _accountStatus;
-}
+console.log(a.getStatus());
 
+a.ackbyOps();
 
-newAccount({accountNo: '2',
-    accountType: enumAccountTypes.TRADE_BASIS,
-    accountStatus : enumAccountStatus.DRAFT});
-
-let aAccount: accountItem = getAccount('1');
-
-changeStatus(enumAccountStatus.PENDING);
-
-console.log(aAccount);
+console.log(a.getStatus());
