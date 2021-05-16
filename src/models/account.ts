@@ -32,8 +32,8 @@ class Account  {
 
 let a: Account = new Account('1', enumAccountTypes.TRADE_BASIS);
 
-console.log(a.getStatus());
+console.log(`the status is ${a.getStatus()}`);
 
 a.ackbyOps();
 
-console.log(a.getStatus());
+console.log(`the status is changed to ${a.getStatus()}`);
