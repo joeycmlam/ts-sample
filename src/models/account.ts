@@ -2,8 +2,6 @@ import {enumAccountStatus, enumAccountTypes} from "./IAccount";
 
 class Account  {
 
-
-
     private _accountNo: string = '';
     private _accountType: enumAccountTypes;
     private _accountStatus: enumAccountStatus = enumAccountStatus.DRAFT;
@@ -13,10 +11,18 @@ class Account  {
         return this._accountStatus;
     }
 
-
-    getAccount(): Account {
-        return null;
+    public get accountNo(): string {
+        return this._accountNo;
     }
+
+    public get accountType(): enumAccountTypes {
+        return this._accountType;
+    }
+
+    public get dateCreated(): Date {
+        return this._dateCreated;
+    }
+
 
     constructor (_accountNo: string, _accountType: enumAccountTypes) {
         this._accountNo = _accountNo;
