@@ -38,6 +38,8 @@ class Account  {
     closeAccount () {
         this._accountStatus = enumAccountStatus.CLOSE;
     }
+
+
 }
 
 let a: Account = new Account('1', enumAccountTypes.TRADE_BASIS);

@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.accounts = void 0;
 var accounts = /** @class */ (function () {
     function accounts() {
@@ -16,3 +16,4 @@ var accounts = /** @class */ (function () {
     return accounts;
 }());
 exports.accounts = accounts;
+//# sourceMappingURL=accounts.js.map

@@ -18,9 +18,10 @@ export class accounts {
     }
 
 
-    public static getAccount(_accountNo: string) : accountItem {
+    public static getAccount(_accountNo: string) : Account {
         return null;
     }
+
 
 }
 
