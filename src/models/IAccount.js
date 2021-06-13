@@ -16,4 +16,3 @@ var enumAccountStatus;
     enumAccountStatus["INACTIVE"] = "Inacive";
     enumAccountStatus["CLOSE"] = "Closed";
 })(enumAccountStatus = exports.enumAccountStatus || (exports.enumAccountStatus = {}));
-//# sourceMappingURL=IAccount.js.map

@@ -50,4 +50,3 @@ var a = new Account('1', IAccount_1.enumAccountTypes.TRADE_BASIS);
 console.log("this is the status " + a.accountStatus);
 a.ackbyOps();
 console.log("this is the latest status " + a.accountStatus);
-//# sourceMappingURL=account.js.map

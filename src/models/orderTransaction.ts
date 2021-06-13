@@ -14,10 +14,6 @@ export enum enumTxnType {
 
 class orderTransaciton {
 
-    private orderTxnId: number;
-    private paymentType: enumPaymentType ;
-    private transactionType: enumTxnType;
-
 
 
 
